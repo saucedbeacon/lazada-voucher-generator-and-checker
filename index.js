@@ -8,7 +8,7 @@ async function save(url, value) {
         console.log(`Found: ${url} | Value: ${value}`);
         fs.appendFileSync(
             path.join(__dirname, 'url-validated.txt'),
-            url,
+            url + '\n',
             { encoding: 'utf8' })
     }
 }
