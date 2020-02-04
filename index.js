@@ -31,21 +31,21 @@ async function run (url) {
 }
 
 // uji coba
-run('https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=204736676400001')
-    .then(() => console.log('done'))
+// run('https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=204736676400001')
+//     .then(() => console.log('done'))
 
 // 6 detik
-let i = 1;
+let i = 0;
 // pakai random
-// setInterval(() => {
-//     let voucher_id = 204736676400001
-//     let get_random = random(1, 100) * 10000000
+setInterval(() => {
+    let number = 7366764 + i
+    let voucher_id = `204${number}00001`
 
-//     console.log(`url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${get_random + voucher_id}`)
+    console.log(`check url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
 
-//     run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${get_random + voucher_id}`)
-//         .then(() => {
-//             console.log(`done ${i}`)
-//             i++
-//         })
-// }, 6000);
+    run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
+        .then(() => {
+            console.log(`done ${i+1}`)
+            i++
+        })
+}, 6000);
