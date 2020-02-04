@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer')
 const fs = require('fs')
 const path = require('path')
 const random = require('random-num')
+const initialIteration = Number(process.argv[2]) || 0;
 
 async function save(url, value) {
     if (value) {
@@ -45,7 +46,7 @@ async function recursiveRun(iter) {
 
     await run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
         .then(() => {
-            console.log(`check done ${i+1}`)
+            console.log(`check done ${i}`)
             recursiveRun(i + 1)
         })
         .catch(err => {
@@ -55,5 +56,5 @@ async function recursiveRun(iter) {
         })
 }
 
-// mulai dari 0 iterasi
-recursiveRun(0);
+// mulai dari 0 iterasi atau sesuai inputan
+recursiveRun(initialIteration);
