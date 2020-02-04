@@ -37,13 +37,13 @@ async function run (url) {
 // 6 detik
 let i = 0;
 // pakai random
-setInterval(() => {
+setInterval(async () => {
     let number = 7366764 + i
     let voucher_id = `204${number}00001`
 
-    console.log(`check url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
+    await console.log(`check url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
 
-    run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
+    await run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
         .then(() => {
             console.log(`done ${i+1}`)
             i++
