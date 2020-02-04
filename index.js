@@ -34,18 +34,21 @@ async function run (url) {
 // run('https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=204736676400001')
 //     .then(() => console.log('done'))
 
-let duration = 10 * 1000;
-let i = 0;
 // pakai random
-setInterval(() => {
+async function recursiveRun(iter) {
+    let i = iter
+
     let number = 7366764 + i
     let voucher_id = `204${number}00001`
 
     console.log(`check url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
 
-    run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
+    await run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
         .then(() => {
             console.log(`done ${i+1}`)
-            i++
+            recursiveRun(i + 1)
         })
-}, duration);
+}
+
+// mulai dari 0 iterasi
+recursiveRun(0);
