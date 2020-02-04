@@ -11,3 +11,7 @@
 
 # RUN
 <code>npm start</code>
+
+# IF YOU WANT CONTINUE ITERATION
+<code>npm start 10</code>
+note: 10 is initial iteration number
