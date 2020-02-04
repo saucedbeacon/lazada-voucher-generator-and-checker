@@ -1,0 +1,16 @@
+{
+  "name": "vourcher-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^2.1.0",
+    "random-num": "^1.1.3"
+  }
+}
