@@ -38,14 +38,19 @@ async function run (url) {
 async function recursiveRun(iter) {
     let i = iter
 
-    let number = 7366764 + i
+    let number = 6000000 + i
     let voucher_id = `204${number}00001`
 
     console.log(`check url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
 
     await run(`https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
         .then(() => {
-            console.log(`done ${i+1}`)
+            console.log(`check done ${i+1}`)
+            recursiveRun(i + 1)
+        })
+        .catch(err => {
+            console.log(err)
+            console.log(`not found ${i + 1}`)
             recursiveRun(i + 1)
         })
 }
