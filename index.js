@@ -50,8 +50,8 @@ async function recursiveRun(iter) {
         })
         .catch(err => {
             console.log(err)
-            console.log(`not found ${i + 1}`)
-            recursiveRun(i + 1)
+            console.log(`timeout internet connection ${i + 1} retrying...`)
+            recursiveRun(i)
         })
 }
 
