@@ -39,8 +39,8 @@ async function run (url) {
 async function recursiveRun(iter) {
     let i = iter
 
-    let number = 6862238 + i
-    let voucher_id = `204${number}00001`
+    let number = 70000000 + i
+    let voucher_id = `20${number}00001`
 
     console.log(`check url: https://pages.lazada.co.id/wow/i/id/search/search-voucher-detail?wh_weex=true&voucherChannel=msgcenter&voucherId=${voucher_id}`)
 
